@@ -1,0 +1,7 @@
+if SHIELD_SUPERMINI_DIAG
+
+config SUPERMINI_I2C_DIAGNOSTIC
+    default y
+
+endif
+
