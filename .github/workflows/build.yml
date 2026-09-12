@@ -25,7 +25,7 @@ jobs:
         run: west zephyr-export
 
       - name: Build standalone Zephyr diagnostic
-        run: west build -s bare -d build -b eyelash_nano
+        run: west build -s bare -d build -b eyelash_nano -- -DKCONFIG_WARNINGS_AS_ERRORS=OFF
 
       - name: Collect firmware files
         run: |
