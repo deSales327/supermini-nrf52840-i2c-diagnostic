@@ -1,0 +1,9 @@
+/*
+ * The eyelash_nano board definition already assigns:
+ *   SDA -> P0.17
+ *   SCL -> P0.20
+ * and provides a USB CDC ACM console.
+ */
+&i2c0 {
+	status = "okay";
+};

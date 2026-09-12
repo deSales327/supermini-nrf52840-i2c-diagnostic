@@ -1,0 +1,20 @@
+manifest:
+  version: "0.13"
+
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: eyelash
+      url-base: https://github.com/a741725193
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: v4.1.0
+      import: west.yml
+    - name: zmk-board-eyelash
+      remote: eyelash
+      revision: main
+
+  self:
+    path: .
