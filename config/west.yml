@@ -2,20 +2,14 @@ manifest:
   version: "0.13"
 
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: eyelash
-      url-base: https://github.com/a741725193
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zmkfirmware/zephyr
 
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
-      import: app/west.yml
-    - name: zmk-board-eyelash
-      remote: eyelash
-      revision: main
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: v3.5.0+zmk-fixes
+      import: west.yml
 
   self:
     path: config
-
