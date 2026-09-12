@@ -1,0 +1,21 @@
+manifest:
+  version: "0.13"
+
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: eyelash
+      url-base: https://github.com/a741725193
+
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zmk-board-eyelash
+      remote: eyelash
+      revision: main
+
+  self:
+    path: config
+
