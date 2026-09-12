@@ -15,16 +15,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.12"
 
-      - name: Install west
-        run: pip install west
-
-      - name: Fetch Zephyr and eyelash_nano board
-        run: |
-          west init -l .
-          west update
-          west zephyr-export
+      - name: Set up Zephyr project and SDK
+        uses: zephyrproject-rtos/action-zephyr-setup@v1
+        with:
+          app-path: .
+          toolchains: arm-zephyr-eabi
 
       - name: Build
         run: west build -b eyelash_nano -d build .
