@@ -1,0 +1,3 @@
+config SHIELD_SUPERMINI_DIAG
+    def_bool $(shields_list_contains,supermini_diag)
+
