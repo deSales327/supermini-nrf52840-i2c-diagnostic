@@ -25,7 +25,7 @@ jobs:
         run: west zephyr-export
 
       - name: Build standalone Zephyr diagnostic
-        run: west build -s bare -d build -b eyelash_nano -- -DKCONFIG_WARNINGS_AS_ERRORS=OFF
+        run: west build -s bare -d build -b eyelash_nano -- -DFORCED_CONF_FILE=$GITHUB_WORKSPACE/bare/prj.conf
 
       - name: Collect firmware files
         run: |
