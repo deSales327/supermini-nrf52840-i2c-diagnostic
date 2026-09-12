@@ -1,0 +1,6 @@
+if BOARD_EYELASH_NANO
+
+config BOARD
+    default "eyelash_nano"
+
+endif
