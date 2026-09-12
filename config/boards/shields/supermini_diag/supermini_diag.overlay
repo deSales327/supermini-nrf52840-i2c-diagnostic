@@ -1,4 +1,34 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
 &i2c0 {
     status = "okay";
+};
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,matrix-transform = &default_transform;
+        zmk,physical-layout = &diagnostic_layout;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <1>;
+        rows = <1>;
+        map = <0>;
+    };
+
+    diagnostic_layout: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Diagnostic";
+        transform = <&default_transform>;
+    };
 };
 
