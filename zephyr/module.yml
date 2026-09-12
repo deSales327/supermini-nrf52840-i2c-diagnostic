@@ -1,0 +1,6 @@
+name: supermini_i2c_diagnostic
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .
