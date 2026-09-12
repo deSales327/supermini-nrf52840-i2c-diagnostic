@@ -2,12 +2,12 @@ manifest:
   version: "0.13"
 
   remotes:
-    - name: zephyrproject-rtos
-      url-base: https://github.com/zmkfirmware/zephyr
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
 
   projects:
     - name: zephyr
-      remote: zephyrproject-rtos
+      remote: zmkfirmware
       revision: v3.5.0+zmk-fixes
       import: west.yml
 
