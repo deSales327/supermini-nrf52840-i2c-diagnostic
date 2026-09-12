@@ -1,0 +1,4 @@
+include:
+  - board: eyelash_nano
+    shield: supermini_diag
+    artifact-name: supermini-i2c-diagnostic

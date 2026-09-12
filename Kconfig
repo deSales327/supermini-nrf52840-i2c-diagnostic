@@ -1,0 +1,5 @@
+config SUPERMINI_I2C_DIAGNOSTIC
+	bool "SuperMini I2C diagnostic"
+	default y
+	help
+	  Enable the I2C scanner thread for the SuperMini diagnostic firmware.
