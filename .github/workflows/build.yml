@@ -7,31 +7,4 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Set up Zephyr project and SDK
-        uses: zephyrproject-rtos/action-zephyr-setup@v1
-        with:
-          app-path: .
-          toolchains: arm-zephyr-eabi
-
-      - name: Build
-        run: west build -b eyelash_nano -d build .
-
-      - name: Upload firmware
-        uses: actions/upload-artifact@v4
-        with:
-          name: supermini-i2c-diagnostic
-          path: |
-            build/zephyr/zephyr.uf2
-            build/zephyr/zephyr.bin
-            build/zephyr/zephyr.hex
-            build/zephyr/zephyr.elf
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
