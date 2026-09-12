@@ -13,6 +13,7 @@
 #define SCAN_FIRST_ADDRESS 0x08
 #define SCAN_LAST_ADDRESS  0x77
 #define SCAN_INTERVAL_MS   5000
+#define USB_STARTUP_DELAY_MS 2000
 
 static const struct device *const i2c_dev = DEVICE_DT_GET(I2C_NODE);
 
@@ -51,6 +52,9 @@ static void diagnostic_thread(void *unused_a, void *unused_b, void *unused_c)
     ARG_UNUSED(unused_b);
     ARG_UNUSED(unused_c);
 
+    /* Give USB CDC time to enumerate before starting the I2C scan. */
+    k_msleep(USB_STARTUP_DELAY_MS);
+
     printk("\r\n========================================\r\n");
     printk("SuperMini nRF52840 I2C diagnostic\r\n");
     printk("Target: eyelash_nano / I2C0\r\n");
@@ -72,4 +76,3 @@ static void diagnostic_thread(void *unused_a, void *unused_b, void *unused_c)
 
 K_THREAD_DEFINE(supermini_i2c_diagnostic, 2048,
                 diagnostic_thread, NULL, NULL, NULL, 5, 0, 0);
-
